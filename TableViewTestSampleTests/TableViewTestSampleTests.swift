@@ -40,7 +40,8 @@ class TableViewTestSampleTests: XCTestCase {
         let testItems = ["test-item-1"]
         vc.items = testItems
         
-        vc.tableView.cellForRow(at: IndexPath(row: 0, section: 1))
+//        このメソッドは表示中のセルしか取得できない
+//        vc.tableView.cellForRow(at: IndexPath(row: 0, section: 1))
         let cell = vc.tableView(vc.tableView, cellForRowAt: IndexPath(row: 0, section: 1))
         XCTAssertEqual(cell.textLabel?.text, "test-item-1")
     }
